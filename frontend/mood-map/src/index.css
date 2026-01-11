@@ -1,0 +1,269 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: #f4f6f8;
+  color: #222;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.app-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+/* ===== GLOBAL THEMES ===== */
+body.light {
+  background: #f4f6f8;
+  color: #0f172a;
+}
+
+body.dark {
+  background: linear-gradient(135deg, #020617, #020617);
+  color: #e5e7eb;
+}
+/* ===== TOP BAR ===== */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ===== THEME ICON BUTTON ===== */
+.theme-icon-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  background: var(--card-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.theme-icon-btn:hover {
+  transform: scale(1.05);
+}
+
+.theme-icon {
+  width: 22px;
+  height: 22px;
+  opacity: 0.85;
+}
+
+/* Dark mode icon color fix */
+body.dark .theme-icon {
+  filter: invert(1);
+}
+
+/* ===== CARDS (LIST + DETAILS) ===== */
+.card, .place-card, .place-row {
+  background: white;
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  transition: all 0.2s ease;
+  border: 1px solid #e5e7eb;
+}
+
+body.dark .card,
+body.dark .place-card,
+body.dark .place-row {
+  background: #020617;
+  border-color: #1e293b;
+  color: #e5e7eb;
+}
+
+/* ===== MOOD CARDS ===== */
+.mood-card {
+  background: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mood-card:hover {
+  transform: translateY(-2px);
+}
+
+/* Selected mood */
+.mood-card.active {
+  border: 2px solid #6366f1;
+  background: var(--card-active-bg);
+}
+
+/* Selected mood */
+.mood-card.selected {
+  border-color: #6366f1;
+  background: #eef2ff;
+  color: #020617;
+}
+
+/* Dark mode selected */
+body.dark .mood-card.selected {
+  background: #1e1b4b;
+  border-color: #818cf8;
+  color: #e5e7eb;
+}
+
+/* ===== BUTTONS ===== */
+button {
+  border-radius: 10px;
+  padding: 8px 14px;
+  border: 1px solid #e5e7eb;
+  background: white;
+  cursor: pointer;
+}
+
+body.dark button {
+  background: #020617;
+  color: #e5e7eb;
+  border-color: #334155;
+}
+
+/* ===== VIEW TOGGLE ===== */
+.view-toggle button.active {
+  background: #4f46e5;
+  color: white;
+  border-color: #4f46e5;
+}
+
+
+/* Headings */
+h1 {
+  margin-bottom: 12px;
+}
+
+/* Buttons */
+button {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #f0f0f0;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+/* Toggle buttons */
+.view-toggle button {
+  margin-right: 8px;
+}
+
+.view-toggle .active {
+  background: #4f46e5;
+  color: white;
+  border-color: #4f46e5;
+}
+
+/* Cards */
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Loading */
+.loading-toast {
+  background: #eef2ff;
+  border: 1px solid #c7d2fe;
+  color: #3730a3;
+  padding: 10px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+/* Messages */
+.info-msg {
+  color: #555;
+  margin-top: 10px;
+}
+
+.error-msg {
+  color: #b91c1c;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* List items */
+.place-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.place-row h3 {
+  margin: 0;
+}
+
+/* List container */
+.places-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Card */
+.place-card {
+  padding: 16px 20px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+.place-card:hover {
+  transform: translateY(-2px);
+}
+
+/* Text */
+.place-card h3 {
+  margin: 0;
+}
+
+.place-card p {
+  margin: 4px 0 0;
+  opacity: 0.8;
+}
+:root {
+  --bg-color: #f8fafc;
+  --card-bg: #ffffff;
+  --card-active-bg: #eef2ff;
+  --text-color: #020617;
+  --border-color: #e5e7eb;
+}
+
+body.dark {
+  --bg-color: #020617;
+  --card-bg: #020617;
+  --card-active-bg: #1e1b4b;
+  --text-color: #e5e7eb;
+  --border-color: #1e293b;
+}
+.light {
+  --toggle-bg: #dbeafe;
+}
+.dark {
+  --toggle-bg: #1e293b;
+}
