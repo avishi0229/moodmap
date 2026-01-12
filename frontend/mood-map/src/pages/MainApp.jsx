@@ -210,8 +210,9 @@ export default function MainApp({ favorites, setFavorites }) {
         toggleFavorite={toggleFavorite}
         viewMode={viewMode}
         filteredPlaces={filteredPlaces}
-        position={position}
+        position={position}   
       />
+
     </div>
   );
 }

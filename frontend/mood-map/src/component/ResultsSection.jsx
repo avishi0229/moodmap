@@ -12,8 +12,10 @@ export default function ResultsSection({
   favorites,
   toggleFavorite,
   viewMode,
-  filteredPlaces
-}) {
+  filteredPlaces,
+  position   
+}) 
+ {
   return (
     <>
       {loading && (
