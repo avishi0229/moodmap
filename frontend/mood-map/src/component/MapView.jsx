@@ -8,6 +8,11 @@ export default function MapView({
   onSelectPlace,
   favorites
 }) {
+  // ✅ ADD THIS GUARD
+  if (!position) {
+    return <div>Loading map...</div>;
+  }
+
   return (
     <MapContainer
       center={position}
